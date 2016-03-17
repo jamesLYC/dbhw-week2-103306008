@@ -1,17 +1,19 @@
-html {
+<head>
+<style>
+.timer-wrapper {
   width: 100%;
   height: 100%;
   background-color: #44aacf;
 }
 
-ul {
+.timer-wrapper > ul {
   height: 100%;
   width: 100%;
   display: block;
   margin: 0 auto;
 }
 
-li {
+.timer-wrapper > ul > li {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -24,7 +26,7 @@ li {
   transition: all 0.5s ease;
 }
 
-li:last-child {
+.timer-wrapper > ul > li:last-child {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -42,7 +44,7 @@ li:last-child {
   animation: pulseShadow 5s infinite linear;
 }
 
-li:last-child:after {
+.timer-wrapper > ul > li:last-child:after {
   content: '';
   border: 3px dotted rgba(22, 42, 43, 1.0);
   border-radius: 200px;
@@ -56,7 +58,7 @@ li:last-child:after {
   box-shadow: inset 0px 0px 30px rgba(0, 0, 0, 1.0);
 }
 
-li:first-child {
+.timer-wrapper > ul > li:first-child {
   margin-left: -130px;
   margin-top: -130px;
   z-index: 2;
@@ -66,7 +68,7 @@ li:first-child {
   animation: spinBG 5s infinite linear;
 }
 
-li:nth-child(2) {
+.timer-wrapper > ul > li:nth-child(2) {
   margin-left: -137px;
   margin-top: -137px;
   z-index: 1;
@@ -78,7 +80,7 @@ li:nth-child(2) {
   animation: spinBG2 2s infinite linear;
 }
 
-li:nth-child(3) {
+.timer-wrapper > ul > li:nth-child(3) {
   margin-left: -150px;
   margin-top: -150px;
   z-index: 1;
@@ -89,7 +91,7 @@ li:nth-child(3) {
   animation: spinBG 12s infinite linear;
 }
 
-li:nth-child(4) {
+.timer-wrapper > ul > li:nth-child(4) {
   margin-left: -170px;
   margin-top: -170px;
   z-index: 1;
@@ -176,8 +178,12 @@ li:nth-child(4) {
     transform: rotate(-2000deg);
   }
 }
-<div >
-  <span id="num"></span>
+</style>
+</head>
+<body>
+<div class="timer-wrapper">
+
+  <span id="num">60</span>
   <ul>
     <li></li>
     <li></li>
@@ -187,6 +193,7 @@ li:nth-child(4) {
   </ul>
 </div>
 
+<script>
 function minus() {
   if (document.getElementById("num")) {
     var curr = parseInt(document.getElementById("num").innerHTML);
@@ -205,3 +212,7 @@ function minus() {
   }, 1000);
 };
 minus();
+</script>
+<h1>Timer</h1>
+
+</body>
